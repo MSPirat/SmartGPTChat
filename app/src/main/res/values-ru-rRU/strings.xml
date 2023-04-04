@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Умница ChatGPT</string>
+    <string name="enter_your_message_here">Введите текст сообщения</string>
+    <string name="wait_typing">Пишу…</string>
+    <string name="welcome_smartchatgpt">Вас приветсвует УмницаChatGPT\nДавайте пообщаемся</string>
+</resources>
