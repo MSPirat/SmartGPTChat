@@ -1,6 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
+
     <string name="app_name">SmartChatGPT</string>
     <string name="enter_your_message_here">Enter your message here</string>
     <string name="wait_typing">Typing…</string>
-    <string name="welcome_smartchatgpt">Welcome to SmartChatGPT\nLet's chat</string>
+    <string name="welcome_text">Welcome to SmartChatGPT</string>
+
 </resources>
