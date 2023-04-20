@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         val body = jsonBody.toString().toRequestBody(JSON)
         val request = Request.Builder()
             .url("https://api.openai.com/v1/completions")
-            .header("Authorization", "Bearer YOUR_GPT_CHAT_KEY")
+            .header("Authorization", "Bearer YOUR_GPT_CHAT_KEY") //TODO write your key here for use App
             .post(body)
             .build()
 

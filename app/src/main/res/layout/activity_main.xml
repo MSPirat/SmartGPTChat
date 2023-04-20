@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/background_textfield_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/welcome_text"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/background_textfield_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_toolbar"
         android:layout_width="match_parent"
@@ -24,7 +47,8 @@
             android:src="@drawable/ic_round_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="@string/arrow_back_button" />
 
         <TextView
             android:id="@+id/text_top_toolbar"
@@ -48,48 +72,40 @@
             app:layout_constraintBottom_toBottomOf="@+id/arrow_back_top_toolbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/arrow_back_top_toolbar"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:contentDescription="@string/call_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/message_text"
+    <View
+        android:id="@+id/background_textfield_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bottom_text_back"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_toolbar" />
-
-    <TextView
-        android:id="@+id/welcome_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text="@string/welcome_text"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+        app:layout_constraintTop_toTopOf="@id/message_text" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/message_text"
         style="@style/TextInputLayoutStyle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:focusable="true"
         android:gravity="start|bottom"
+        android:background="@android:color/transparent"
         android:hint="@string/enter_your_message_here"
-
         app:hintTextColor="@color/main_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/message_edit_text"
-            android:layout_width="340dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
             android:importantForAutofill="no" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -98,11 +114,12 @@
         android:id="@+id/send_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/send_button"
         android:src="@drawable/ic_round_send_24"
         app:layout_constraintBottom_toBottomOf="@+id/message_text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/message_text"
         app:layout_constraintTop_toTopOf="@+id/message_text" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

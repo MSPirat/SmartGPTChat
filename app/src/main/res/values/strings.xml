@@ -6,5 +6,10 @@
     <string name="enter_your_message_here">Enter your message here</string>
     <string name="wait_typing">Typing…</string>
     <string name="welcome_text">Welcome to SmartChatGPT</string>
+    <string name="send_button" translatable="false">send_button</string>
+    <string name="image_start_chat" translatable="false">image_start_chat</string>
+    <string name="image_end_chat" translatable="false">image_end_chat</string>
+    <string name="arrow_back_button" translatable="false">arrow_back_button</string>
+    <string name="call_button" translatable="false">call_button</string>
 
 </resources>

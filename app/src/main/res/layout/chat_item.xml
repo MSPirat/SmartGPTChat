@@ -1,50 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:id="@+id/start_chat_view"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/start_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/start_chat_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/message_back"
+            android:backgroundTint="#0F6DE0"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="@+id/image_start_chat"
+            app:layout_constraintTop_toTopOf="@+id/image_start_chat"
+            tools:ignore="MissingConstraints,RelativeOverlap">
+
+            <TextView
+                android:id="@+id/start_chat_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:text="Answer" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/image_start_chat"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/image_start_chat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_app_chat_gpt_finish"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/end_chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="80dp"
-        android:background="@drawable/message_back"
-        android:backgroundTint="#0F6DE0"
-        android:padding="8dp"
+        android:layout_alignParentEnd="true"
         tools:ignore="RelativeOverlap">
 
-        <TextView
-            android:id="@+id/start_chat_text_view"
+        <LinearLayout
+            android:id="@+id/end_chat_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            tools:text="Question?" />
-    </LinearLayout>
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="48dp"
+            android:background="@drawable/message_back"
+            android:backgroundTint="#1EC52E"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/image_end_chat"
+            app:layout_constraintTop_toTopOf="@+id/image_end_chat"
+            tools:ignore="MissingConstraints,RelativeOverlap">
 
-    <LinearLayout
-        android:id="@+id/end_chat_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/start_chat_view"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/message_back"
-        android:backgroundTint="#1EC52E"
-        android:padding="8dp">
+            <TextView
+                android:id="@+id/end_chat_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:text="Question?" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/end_chat_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            tools:text="Answer" />
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/image_end_chat"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/image_end_chat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_users_question"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
