@@ -11,5 +11,6 @@
     <string name="image_end_chat" translatable="false">image_end_chat</string>
     <string name="arrow_back_button" translatable="false">arrow_back_button</string>
     <string name="call_button" translatable="false">call_button</string>
+    <string name="toast_write_text">You need write something</string>
 
 </resources>

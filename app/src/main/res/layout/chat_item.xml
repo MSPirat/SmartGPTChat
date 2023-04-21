@@ -12,14 +12,16 @@
 
         <LinearLayout
             android:id="@+id/start_chat_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="48dp"
             android:background="@drawable/message_back"
             android:backgroundTint="#0F6DE0"
             android:padding="8dp"
-            app:layout_constraintStart_toStartOf="@+id/image_start_chat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/image_start_chat"
             tools:ignore="MissingConstraints,RelativeOverlap">
 
@@ -34,8 +36,8 @@
 
         <ImageView
             android:id="@+id/image_start_chat"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:contentDescription="@string/image_start_chat"
@@ -51,19 +53,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
         tools:ignore="RelativeOverlap">
 
         <LinearLayout
             android:id="@+id/end_chat_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginStart="48dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
             android:background="@drawable/message_back"
             android:backgroundTint="#1EC52E"
             android:padding="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/image_end_chat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/image_end_chat"
             tools:ignore="MissingConstraints,RelativeOverlap">
 

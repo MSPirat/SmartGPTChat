@@ -6,10 +6,10 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.DelicateCoroutinesApi
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         messageEditText = findViewById(R.id.message_edit_text)
         sendButton = findViewById(R.id.send_button)
 
-        // setup recycler view
         messageAdapter = MessageAdapter(messageList)
         recyclerView.adapter = messageAdapter
         val llm = LinearLayoutManager(this)
@@ -47,12 +46,18 @@ class MainActivity : AppCompatActivity() {
 
         sendButton.setOnClickListener { v: View ->
             val question = messageEditText.text.toString().trim()
-            addToChat(question, Message.SEND_BY_ME)
-            messageEditText.setText("")
-            callAPI(question)
-            welcomeTextView.visibility = View.GONE
+            if (question.isEmpty()) {
+                Toast.makeText(this, getString(R.string.toast_write_text), Toast.LENGTH_SHORT)
+                    .show()
+            } else {
+                addToChat(question, Message.SEND_BY_ME)
+                messageEditText.setText("")
+                callAPI(question)
+                welcomeTextView.visibility = View.GONE
+            }
         }
     }
+
 
     @SuppressLint("NotifyDataSetChanged")
     private fun addToChat(message: String, sendBy: String) {
@@ -63,14 +68,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
     private fun addResponse(response: String) {
         messageList.removeAt(messageList.size - 1)
         addToChat(response, Message.SEND_BY_BOT)
     }
 
     private fun callAPI(question: String) {
-        messageList.add(Message(R.string.wait_typing.toString(), Message.SEND_BY_BOT))
+        messageList.add(Message(getString(R.string.wait_typing), Message.SEND_BY_BOT))
         val jsonBody = JSONObject()
         try {
             jsonBody.put("model", "text-davinci-003")
@@ -83,13 +87,16 @@ class MainActivity : AppCompatActivity() {
         val body = jsonBody.toString().toRequestBody(JSON)
         val request = Request.Builder()
             .url("https://api.openai.com/v1/completions")
-            .header("Authorization", "Bearer YOUR_GPT_CHAT_KEY") //TODO write your key here for use App
+            .header(
+                "Authorization",
+                "Bearer YOUR_GPT_CHAT_KEY"
+            ) //TODO write your key here for use App
             .post(body)
             .build()
 
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                addResponse("Failed to load response due to ${e.message}")
+                addResponse("Failed to load response ${e.message}")
             }
 
             override fun onResponse(call: Call, response: Response) = if (response.isSuccessful) {
@@ -103,7 +110,7 @@ class MainActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             } else {
-                addResponse("Failed to load response due to ${response.body}")
+                addResponse("Failed to load response ${response.body}")
             }
         })
     }

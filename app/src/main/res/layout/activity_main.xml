@@ -9,7 +9,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/background_textfield_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,11 +45,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
+            android:contentDescription="@string/arrow_back_button"
             android:src="@drawable/ic_round_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white"
-            android:contentDescription="@string/arrow_back_button" />
+            app:tint="@color/white" />
 
         <TextView
             android:id="@+id/text_top_toolbar"
@@ -68,13 +69,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
+            android:contentDescription="@string/call_button"
             android:src="@drawable/ic_round_call_24"
             app:layout_constraintBottom_toBottomOf="@+id/arrow_back_top_toolbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/arrow_back_top_toolbar"
-            app:tint="@color/white"
-            android:contentDescription="@string/call_button" />
-
+            app:tint="@color/white" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
@@ -94,9 +94,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
         android:focusable="true"
         android:gravity="start|bottom"
-        android:background="@android:color/transparent"
         android:hint="@string/enter_your_message_here"
         app:hintTextColor="@color/main_color"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -107,7 +107,6 @@
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:importantForAutofill="no" />
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
@@ -122,4 +121,4 @@
         app:layout_constraintStart_toEndOf="@+id/message_text"
         app:layout_constraintTop_toTopOf="@+id/message_text" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
