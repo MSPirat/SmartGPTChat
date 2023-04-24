@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         llm.stackFromEnd = true
         recyclerView.layoutManager = llm
 
-        sendButton.setOnClickListener { v: View ->
+        sendButton.setOnClickListener {
             val question = messageEditText.text.toString().trim()
             if (question.isEmpty()) {
                 Toast.makeText(this, getString(R.string.toast_write_text), Toast.LENGTH_SHORT)

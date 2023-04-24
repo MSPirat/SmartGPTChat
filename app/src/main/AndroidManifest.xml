@@ -4,15 +4,25 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/icon_app_chat_gpt_finish"
         android:label="@string/app_name"
+        android:roundIcon="@drawable/icon_app_chat_gpt_finish"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartChatGPT"
         tools:targetApi="31">
+
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
