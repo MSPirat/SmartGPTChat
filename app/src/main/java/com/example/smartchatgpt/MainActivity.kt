@@ -58,7 +58,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     @SuppressLint("NotifyDataSetChanged")
     private fun addToChat(message: String, sendBy: String) {
         runOnUiThread {

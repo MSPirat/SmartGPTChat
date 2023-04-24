@@ -60,17 +60,17 @@
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/arrow_back_top_toolbar"
-            app:layout_constraintEnd_toStartOf="@+id/call_top_toolbar"
+            app:layout_constraintEnd_toStartOf="@+id/clear_all_top_toolbar"
             app:layout_constraintStart_toEndOf="@id/arrow_back_top_toolbar"
             app:layout_constraintTop_toTopOf="@+id/arrow_back_top_toolbar" />
 
         <ImageView
-            android:id="@+id/call_top_toolbar"
+            android:id="@+id/clear_all_top_toolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
             android:contentDescription="@string/call_button"
-            android:src="@drawable/ic_round_call_24"
+            android:src="@drawable/ic_round_clear_all_24"
             app:layout_constraintBottom_toBottomOf="@+id/arrow_back_top_toolbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/arrow_back_top_toolbar"
